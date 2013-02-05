@@ -118,7 +118,10 @@
     NSMutableString *a = [[NSMutableString alloc] init];
     for (NSString *s in tokens) {
         if (s) {
-            [a appendString:s];
+            unsigned int steamid = [s integerValue];
+            unsigned long long steamid64 = 76561197960265728;
+            steamid64 += (unsigned long long)steamid;
+            [a appendString:[NSString stringWithFormat:@"%llu,", steamid64]];
         }
     }
     return [[NSString alloc] initWithString:a];
@@ -126,67 +129,58 @@
 
 - (NSArray*)getDisplayNames
 {
-    NSArray *accountIDs = [self.match getListOfAccountIDs];
-    NSMutableArray *displayName = [[NSMutableArray alloc] init];
-    /*
-     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-     dispatch_async(queue, ^{
+        NSArray *accountIDs = [self.match getListOfAccountIDs];
+        NSMutableArray *displayNames = [[NSMutableArray alloc] init];
+
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        dispatch_async(queue, ^{
      
-     dispatch_async(dispatch_get_main_queue(), ^{
-     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-     });
-     NSMutableString *url = [[NSMutableString alloc] init];
-     [url appendString:@"http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=FEA2FFAE6A7DCDAA954FA9138E35B351&steamids="];
-     NSString *appendIDs = [self stringWithTokens:accountIDs];
-     [url appendString:appendIDs];
-     NSURL *fetchURL = [NSURL URLWithString:url];
-     NSData *data = [[NSData alloc] initWithContentsOfURL:fetchURL];
-     NSError *error;
-     NSDictionary *profileDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-     //NSDictionary *publicData = [profileDictionary objectForKey:"@"]
-     NSLog([NSString stringWithFormat:@"@", [profileDictionary description]]);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+            });
+            NSMutableString *url = [[NSMutableString alloc] init];
+            [url appendString:@"http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=FEA2FFAE6A7DCDAA954FA9138E35B351&steamids="];
+            NSString *appendIDs = [self stringWithTokens:accountIDs];
+            [url appendString:appendIDs];
+            NSURL *fetchURL = [NSURL URLWithString:url];
+            NSData *data = [[NSData alloc] initWithContentsOfURL:fetchURL];
+            NSError *error;
+            NSDictionary *profileDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+            NSLogDebug(@"%@", [profileDictionary description]);
+            /*
+            NSDictionary *responseData = [profileDictionary objectForKey:@"response"];
+            NSArray *playerArray = [responseData objectForKey:@"players"];
+            for (NSDictionary *d in playerArray){
+                    if([d count] != 0)
+                    [displayNames addObject:[d objectForKey:@"personaname"]];
+             
+            }
+             */
      
+        });
      
-     });
-     */
-    //return [NSArray arrayWithArray:displayName];
+    //return [NSArray arrayWithArray:displayNames];
     
     return [self.match getListOfAccountIDs];
-}
-
--(NSString *)pad64Bit:(u_int32_t)n {
-    //should be 64 bits
-    NSLogDebug(@"");
-    NSMutableString *buffer = [[NSMutableString alloc] initWithString:@"00000001000100000000000000000001"];
-    
-    NSString *numToStr = [NSString stringWithFormat:@"%u", n];
-    [buffer appendString:numToStr];
-     return buffer;
-    NSRange range = NSMakeRange([buffer length] - [numToStr length], [numToStr length]);
-    [buffer replaceCharactersInRange:range withString:numToStr];
-    NSLogDebug("%@", buffer);
-    
-    //fuck mutability
-    return [[NSString alloc] initWithString:buffer];
 }
 
 - (void)apiTest
 {
     @try {
-        int steamid = 92107391;
-        NSString *steamid64 = [self pad64Bit:steamid];
-        
-        NSLogDebug(@"%@", steamid64);
-        NSURL *fetchURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/key=FEA2FFAE6A7DCDAA954FA9138E35B351&steamids=%@", steamid64]];
-        
+        unsigned int steamid = 92107391;
+        unsigned long long steamid64 = 76561197960265728;
+        steamid64 += (unsigned long long)steamid;
+        NSLogDebug(@"%llu", steamid64);
+        NSURL *fetchURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=FEA2FFAE6A7DCDAA954FA9138E35B351&steamids=%llu", steamid64]];
+        //NSURL *fetchURL = [NSURL URLWithString:@"http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=FEA2FFAE6A7DCDAA954FA9138E35B351&steamids=76561198052373119"];
         NSData *data = [[NSData alloc] initWithContentsOfURL:fetchURL];
         NSError *error;
         NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         if (error) NSLogDebug(@"%@", [error localizedDescription]);
         NSLog([dataDictionary description]);
     }
-@catch (NSException *e) {
-    NSLogDebug(@"something got fked");
+    @catch (NSException *e) {
+        NSLogDebug(@"something got fked");
 }
 }
 
