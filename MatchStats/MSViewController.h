@@ -12,6 +12,7 @@
 @interface MSViewController : UITableViewController
 
 - (NSMutableArray*)createdataSrc;
+- (NSArray*)getDisplayNames;
 
 @property(strong, nonatomic) MSMatch *match;
 @property(strong, nonatomic) NSMutableArray *dataSrc;

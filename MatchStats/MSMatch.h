@@ -10,14 +10,12 @@
 #import "MSPlayer.h"
 
 @interface MSMatch : NSObject
-{
-  NSDictionary *heroNames;
-}
+
 
 - (id)initWithDict:(NSDictionary* )dict;
 - (NSString*)getHeroNameWithID:(int)heroID;
-- (NSArray*)getLiftOfAccountIDs;
+- (NSArray*)getListOfAccountIDs;
 
 @property(strong, nonatomic) MSPlayer *player0,*player1,*player2,*player3,*player4,*player5,*player6,*player7,*player8,*player9;
-
+@property(strong, nonatomic) NSDictionary *heroNames;
 @end

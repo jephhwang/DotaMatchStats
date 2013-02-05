@@ -11,12 +11,15 @@
 #import "MSPlayer.h"
 #import "MSMatch.h"
 
-
 @interface MSViewController ()
-
+-(NSString *)stringWithTokens:(NSArray *)tokens;
+-(void)apiTest;
 @end
 
 @implementation MSViewController
+
+#pragma helper functions
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -50,7 +53,8 @@
         
         // do background shit here.
         //Fetching Match Info
-        NSURL *fetchURL = [NSURL URLWithString:@"https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/V001/?match_id=107459482&key=FEA2FFAE6A7DCDAA954FA9138E35B351"];
+        NSNumber *matchID = [NSNumber numberWithInt:107459482];
+        NSURL *fetchURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/V001/?match_id=%d&key=FEA2FFAE6A7DCDAA954FA9138E35B351", [matchID integerValue]]];
         NSData *data = [[NSData alloc] initWithContentsOfURL:fetchURL];
         NSError *error;
         NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
@@ -74,7 +78,7 @@
             //self.dataSrc = [[NSMutableArray alloc] initWithObjects:@"jephh", @"pandaran", @"bcao", nil];
             self.dataSrc = [self createdataSrc];
             [self.tableView reloadData];
-            
+            //[self apiTest];
             
         });
     });
@@ -84,6 +88,7 @@
 {
     NSMutableArray *dataSrc = [NSMutableArray arrayWithCapacity:10];
     NSArray *playerArray = [NSArray arrayWithObjects:self.match.player0,self.match.player1,self.match.player2,self.match.player3,self.match.player4,self.match.player5,self.match.player6,self.match.player7,self.match.player8,self.match.player9, nil];
+    NSArray *displayNames = [self getDisplayNames];
     
     for (int i = 0; i<[playerArray count]; i++) {
         
@@ -91,7 +96,7 @@
         NSNumber *d = [[playerArray objectAtIndex:i] deaths];
         NSNumber *a = [[playerArray objectAtIndex:i] assists];
         
-        NSNumber *accountID = [[playerArray objectAtIndex:i] accountID];
+        NSNumber *accountID = [displayNames objectAtIndex:i];
         NSString *kdaStr = [NSString stringWithFormat:@"%d/%d/%d", [k integerValue],
                             [d integerValue],
                             [a integerValue]];
@@ -100,13 +105,89 @@
         
         NSMutableDictionary *p0dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                        accountID, @"PlayerName",
-                                       heroID, @"HeroName",
+                                       heroID, @"HeroID",
                                        kdaStr, @"KDA", nil];
         
         [dataSrc addObject:p0dict];
     }
     
     return dataSrc;
+}
+
+-(NSString *)stringWithTokens:(NSArray *)tokens {
+    NSMutableString *a = [[NSMutableString alloc] init];
+    for (NSString *s in tokens) {
+        if (s) {
+            [a appendString:s];
+        }
+    }
+    return [[NSString alloc] initWithString:a];
+}
+
+- (NSArray*)getDisplayNames
+{
+    NSArray *accountIDs = [self.match getListOfAccountIDs];
+    NSMutableArray *displayName = [[NSMutableArray alloc] init];
+    /*
+     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+     dispatch_async(queue, ^{
+     
+     dispatch_async(dispatch_get_main_queue(), ^{
+     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+     });
+     NSMutableString *url = [[NSMutableString alloc] init];
+     [url appendString:@"http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=FEA2FFAE6A7DCDAA954FA9138E35B351&steamids="];
+     NSString *appendIDs = [self stringWithTokens:accountIDs];
+     [url appendString:appendIDs];
+     NSURL *fetchURL = [NSURL URLWithString:url];
+     NSData *data = [[NSData alloc] initWithContentsOfURL:fetchURL];
+     NSError *error;
+     NSDictionary *profileDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+     //NSDictionary *publicData = [profileDictionary objectForKey:"@"]
+     NSLog([NSString stringWithFormat:@"@", [profileDictionary description]]);
+     
+     
+     });
+     */
+    //return [NSArray arrayWithArray:displayName];
+    
+    return [self.match getListOfAccountIDs];
+}
+
+-(NSString *)pad64Bit:(u_int32_t)n {
+    //should be 64 bits
+    NSLogDebug(@"");
+    NSMutableString *buffer = [[NSMutableString alloc] initWithString:@"00000001000100000000000000000001"];
+    
+    NSString *numToStr = [NSString stringWithFormat:@"%u", n];
+    [buffer appendString:numToStr];
+     return buffer;
+    NSRange range = NSMakeRange([buffer length] - [numToStr length], [numToStr length]);
+    [buffer replaceCharactersInRange:range withString:numToStr];
+    NSLogDebug("%@", buffer);
+    
+    //fuck mutability
+    return [[NSString alloc] initWithString:buffer];
+}
+
+- (void)apiTest
+{
+    @try {
+        int steamid = 92107391;
+        NSString *steamid64 = [self pad64Bit:steamid];
+        
+        NSLogDebug(@"%@", steamid64);
+        NSURL *fetchURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/key=FEA2FFAE6A7DCDAA954FA9138E35B351&steamids=%@", steamid64]];
+        
+        NSData *data = [[NSData alloc] initWithContentsOfURL:fetchURL];
+        NSError *error;
+        NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if (error) NSLogDebug(@"%@", [error localizedDescription]);
+        NSLog([dataDictionary description]);
+    }
+@catch (NSException *e) {
+    NSLogDebug(@"something got fked");
+}
 }
 
 - (void)didReceiveMemoryWarning
@@ -138,13 +219,21 @@
     NSInteger row = [indexPath row];
     NSString *str = [[self.dataSrc objectAtIndex:row] objectForKey:@"PlayerName"];
     NSString *subtext = [[self.dataSrc objectAtIndex:row] objectForKey:@"KDA"];
-    //NSString *str = [self.dataSrc objectAtIndex:row];
+    NSNumber *heroID = [[self.dataSrc objectAtIndex:row] objectForKey:@"HeroID"];
+    NSString *imageName = [self.match getHeroNameWithID:[heroID integerValue]];
     
-    UIImage *player0image= [UIImage imageNamed:@"queen-of-pain.png"];
-    cell.imageView.image = player0image;
+    UIImage *playerimage= [UIImage imageNamed:[NSString stringWithFormat:@"%@_sb.png", imageName]];
+    cell.imageView.image = playerimage;
     
-    //cell.textLabel.text = str;
-    cell.detailTextLabel.text = subtext;
+    if([str integerValue] == -1)
+    {
+        cell.textLabel.text = [NSString stringWithFormat:@"Anonymous"];
+    }
+    else{
+        cell.textLabel.text = [NSString stringWithFormat:@"%d", [str integerValue]];
+    }
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"KDA: %@",subtext];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }

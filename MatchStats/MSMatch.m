@@ -31,13 +31,28 @@
       
 
   }
-  heroNames = [NSDictionary dictionaryWithObject:@"test" forKey:[NSNumber numberWithInt:39]];
+  self.heroNames = [NSDictionary dictionaryWithObjectsAndKeys:
+                    @"axe", [NSNumber numberWithInt:2],
+                    @"nevermore", [NSNumber numberWithInt:11],
+                    @"windrunner", [NSNumber numberWithInt:21],
+                    @"lina", [NSNumber numberWithInt:25],
+                    @"slardar", [NSNumber numberWithInt:28],
+                    @"queenofpain", [NSNumber numberWithInt:39],
+                    @"chaos_knight", [NSNumber numberWithInt:81],
+                    @"nyx_assassin", [NSNumber numberWithInt:88],
+                    @"keeper_of_the_light", [NSNumber numberWithInt:90],
+                    
+                    
+                    
+                    @"troll_warlord", [NSNumber numberWithInt:95],
+                    
+                    nil];
   return self;
 }
 
 - (NSString*)getHeroNameWithID:(int)heroID
 {
-  return [heroNames objectForKey:[NSNumber numberWithInt:heroID]];
+  return [self.heroNames objectForKey:[NSNumber numberWithInt:heroID]];
 }
 
 - (NSArray*)getListOfAccountIDs

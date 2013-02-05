@@ -25,7 +25,16 @@
 		0FC2DFF216BCE85B00DC7117 /* MSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFF016BCE85B00DC7117 /* MSViewController.xib */; };
 		0FC2DFF816BCEBC700DC7117 /* MSPlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFF716BCEBC700DC7117 /* MSPlayerTableViewCell.xib */; };
 		0FC2DFFC16BCEE7900DC7117 /* queen-of-pain.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFFB16BCEE7900DC7117 /* queen-of-pain.png */; };
-		0FC2DFFE16BCEE7E00DC7117 /* chaos-knight.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFFD16BCEE7E00DC7117 /* chaos-knight.png */; };
+		0FD3E91716C0FEB3003821D3 /* queenofpain_sb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD3E91416C0FEB3003821D3 /* queenofpain_sb.png */; };
+		0FD3E91816C0FEB3003821D3 /* lina_sb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD3E91516C0FEB3003821D3 /* lina_sb.png */; };
+		0FD3E91916C0FEB3003821D3 /* chaos_knight_sb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD3E91616C0FEB3003821D3 /* chaos_knight_sb.png */; };
+		0FD3E92116C1011A003821D3 /* troll_warlord_sb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD3E91A16C1011A003821D3 /* troll_warlord_sb.png */; };
+		0FD3E92216C1011A003821D3 /* windrunner_sb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD3E91B16C1011A003821D3 /* windrunner_sb.png */; };
+		0FD3E92316C1011A003821D3 /* nevermore_sb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD3E91C16C1011A003821D3 /* nevermore_sb.png */; };
+		0FD3E92416C1011A003821D3 /* nyx_assassin_sb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD3E91D16C1011A003821D3 /* nyx_assassin_sb.png */; };
+		0FD3E92516C1011A003821D3 /* axe_sb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD3E91E16C1011A003821D3 /* axe_sb.png */; };
+		0FD3E92616C1011A003821D3 /* slardar_sb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD3E91F16C1011A003821D3 /* slardar_sb.png */; };
+		0FD3E92716C1011A003821D3 /* keeper_of_the_light_sb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD3E92016C1011A003821D3 /* keeper_of_the_light_sb.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +64,16 @@
 		0FC2DFF016BCE85B00DC7117 /* MSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSViewController.xib; sourceTree = "<group>"; };
 		0FC2DFF716BCEBC700DC7117 /* MSPlayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSPlayerTableViewCell.xib; sourceTree = "<group>"; };
 		0FC2DFFB16BCEE7900DC7117 /* queen-of-pain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "queen-of-pain.png"; sourceTree = "<group>"; };
-		0FC2DFFD16BCEE7E00DC7117 /* chaos-knight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chaos-knight.png"; sourceTree = "<group>"; };
+		0FD3E91416C0FEB3003821D3 /* queenofpain_sb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = queenofpain_sb.png; sourceTree = "<group>"; };
+		0FD3E91516C0FEB3003821D3 /* lina_sb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lina_sb.png; sourceTree = "<group>"; };
+		0FD3E91616C0FEB3003821D3 /* chaos_knight_sb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chaos_knight_sb.png; sourceTree = "<group>"; };
+		0FD3E91A16C1011A003821D3 /* troll_warlord_sb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = troll_warlord_sb.png; sourceTree = "<group>"; };
+		0FD3E91B16C1011A003821D3 /* windrunner_sb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = windrunner_sb.png; sourceTree = "<group>"; };
+		0FD3E91C16C1011A003821D3 /* nevermore_sb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nevermore_sb.png; sourceTree = "<group>"; };
+		0FD3E91D16C1011A003821D3 /* nyx_assassin_sb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nyx_assassin_sb.png; sourceTree = "<group>"; };
+		0FD3E91E16C1011A003821D3 /* axe_sb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = axe_sb.png; sourceTree = "<group>"; };
+		0FD3E91F16C1011A003821D3 /* slardar_sb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slardar_sb.png; sourceTree = "<group>"; };
+		0FD3E92016C1011A003821D3 /* keeper_of_the_light_sb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keeper_of_the_light_sb.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +158,17 @@
 		0FC2DFF416BCE88800DC7117 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				0FC2DFFD16BCEE7E00DC7117 /* chaos-knight.png */,
 				0FC2DFFB16BCEE7900DC7117 /* queen-of-pain.png */,
+				0FD3E91416C0FEB3003821D3 /* queenofpain_sb.png */,
+				0FD3E91A16C1011A003821D3 /* troll_warlord_sb.png */,
+				0FD3E91B16C1011A003821D3 /* windrunner_sb.png */,
+				0FD3E91C16C1011A003821D3 /* nevermore_sb.png */,
+				0FD3E91D16C1011A003821D3 /* nyx_assassin_sb.png */,
+				0FD3E91E16C1011A003821D3 /* axe_sb.png */,
+				0FD3E91F16C1011A003821D3 /* slardar_sb.png */,
+				0FD3E92016C1011A003821D3 /* keeper_of_the_light_sb.png */,
+				0FD3E91516C0FEB3003821D3 /* lina_sb.png */,
+				0FD3E91616C0FEB3003821D3 /* chaos_knight_sb.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -230,7 +257,16 @@
 				0FC2DFF216BCE85B00DC7117 /* MSViewController.xib in Resources */,
 				0FC2DFF816BCEBC700DC7117 /* MSPlayerTableViewCell.xib in Resources */,
 				0FC2DFFC16BCEE7900DC7117 /* queen-of-pain.png in Resources */,
-				0FC2DFFE16BCEE7E00DC7117 /* chaos-knight.png in Resources */,
+				0FD3E91716C0FEB3003821D3 /* queenofpain_sb.png in Resources */,
+				0FD3E91816C0FEB3003821D3 /* lina_sb.png in Resources */,
+				0FD3E91916C0FEB3003821D3 /* chaos_knight_sb.png in Resources */,
+				0FD3E92116C1011A003821D3 /* troll_warlord_sb.png in Resources */,
+				0FD3E92216C1011A003821D3 /* windrunner_sb.png in Resources */,
+				0FD3E92316C1011A003821D3 /* nevermore_sb.png in Resources */,
+				0FD3E92416C1011A003821D3 /* nyx_assassin_sb.png in Resources */,
+				0FD3E92516C1011A003821D3 /* axe_sb.png in Resources */,
+				0FD3E92616C1011A003821D3 /* slardar_sb.png in Resources */,
+				0FD3E92716C1011A003821D3 /* keeper_of_the_light_sb.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +405,7 @@
 				0FC2DFE216BC584D00DC7117 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
