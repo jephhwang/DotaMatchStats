@@ -1,5 +1,5 @@
 //
-//  MSSecondViewController.h
+//  MSDetailViewController.h
 //  MatchStats
 //
 //  Created by Jeff Wang on 2/1/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MSSecondViewController : UIViewController
+@interface MSDetailViewController : UIViewController
 
 @end

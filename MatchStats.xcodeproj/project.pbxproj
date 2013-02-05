@@ -16,14 +16,16 @@
 		0FC2DFC516BC584D00DC7117 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFC416BC584D00DC7117 /* Default.png */; };
 		0FC2DFC716BC584D00DC7117 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFC616BC584D00DC7117 /* Default@2x.png */; };
 		0FC2DFC916BC584D00DC7117 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFC816BC584D00DC7117 /* Default-568h@2x.png */; };
-		0FC2DFCC16BC584D00DC7117 /* MSFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC2DFCB16BC584D00DC7117 /* MSFirstViewController.m */; };
-		0FC2DFCE16BC584D00DC7117 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFCD16BC584D00DC7117 /* first.png */; };
-		0FC2DFD016BC584D00DC7117 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFCF16BC584D00DC7117 /* first@2x.png */; };
-		0FC2DFD316BC584D00DC7117 /* MSSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC2DFD216BC584D00DC7117 /* MSSecondViewController.m */; };
-		0FC2DFD516BC584D00DC7117 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFD416BC584D00DC7117 /* second.png */; };
-		0FC2DFD716BC584D00DC7117 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFD616BC584D00DC7117 /* second@2x.png */; };
 		0FC2DFDA16BC584D00DC7117 /* MSFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFD816BC584D00DC7117 /* MSFirstViewController.xib */; };
-		0FC2DFDD16BC584D00DC7117 /* MSSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFDB16BC584D00DC7117 /* MSSecondViewController.xib */; };
+		0FC2DFE516BC8A5000DC7117 /* MSMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC2DFE416BC8A5000DC7117 /* MSMatch.m */; };
+		0FC2DFE816BC8AA000DC7117 /* MSPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC2DFE716BC8AA000DC7117 /* MSPlayer.m */; };
+		0FC2DFEC16BCE7CD00DC7117 /* MSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC2DFEA16BCE7CD00DC7117 /* MSDetailViewController.m */; };
+		0FC2DFED16BCE7CD00DC7117 /* MSDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFEB16BCE7CD00DC7117 /* MSDetailViewController.xib */; };
+		0FC2DFF116BCE85B00DC7117 /* MSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC2DFEF16BCE85B00DC7117 /* MSViewController.m */; };
+		0FC2DFF216BCE85B00DC7117 /* MSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFF016BCE85B00DC7117 /* MSViewController.xib */; };
+		0FC2DFF816BCEBC700DC7117 /* MSPlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFF716BCEBC700DC7117 /* MSPlayerTableViewCell.xib */; };
+		0FC2DFFC16BCEE7900DC7117 /* queen-of-pain.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFFB16BCEE7900DC7117 /* queen-of-pain.png */; };
+		0FC2DFFE16BCEE7E00DC7117 /* chaos-knight.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC2DFFD16BCEE7E00DC7117 /* chaos-knight.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,16 +42,20 @@
 		0FC2DFC416BC584D00DC7117 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0FC2DFC616BC584D00DC7117 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0FC2DFC816BC584D00DC7117 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		0FC2DFCA16BC584D00DC7117 /* MSFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSFirstViewController.h; sourceTree = "<group>"; };
-		0FC2DFCB16BC584D00DC7117 /* MSFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSFirstViewController.m; sourceTree = "<group>"; };
-		0FC2DFCD16BC584D00DC7117 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		0FC2DFCF16BC584D00DC7117 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		0FC2DFD116BC584D00DC7117 /* MSSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSecondViewController.h; sourceTree = "<group>"; };
-		0FC2DFD216BC584D00DC7117 /* MSSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSecondViewController.m; sourceTree = "<group>"; };
-		0FC2DFD416BC584D00DC7117 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		0FC2DFD616BC584D00DC7117 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		0FC2DFD916BC584D00DC7117 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MSFirstViewController.xib; sourceTree = "<group>"; };
-		0FC2DFDC16BC584D00DC7117 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MSSecondViewController.xib; sourceTree = "<group>"; };
+		0FC2DFE316BC8A4F00DC7117 /* MSMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMatch.h; sourceTree = "<group>"; };
+		0FC2DFE416BC8A5000DC7117 /* MSMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMatch.m; sourceTree = "<group>"; };
+		0FC2DFE616BC8AA000DC7117 /* MSPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPlayer.h; sourceTree = "<group>"; };
+		0FC2DFE716BC8AA000DC7117 /* MSPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPlayer.m; sourceTree = "<group>"; };
+		0FC2DFE916BCE7CD00DC7117 /* MSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDetailViewController.h; sourceTree = "<group>"; };
+		0FC2DFEA16BCE7CD00DC7117 /* MSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDetailViewController.m; sourceTree = "<group>"; };
+		0FC2DFEB16BCE7CD00DC7117 /* MSDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSDetailViewController.xib; sourceTree = "<group>"; };
+		0FC2DFEE16BCE85B00DC7117 /* MSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSViewController.h; sourceTree = "<group>"; };
+		0FC2DFEF16BCE85B00DC7117 /* MSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSViewController.m; sourceTree = "<group>"; };
+		0FC2DFF016BCE85B00DC7117 /* MSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSViewController.xib; sourceTree = "<group>"; };
+		0FC2DFF716BCEBC700DC7117 /* MSPlayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSPlayerTableViewCell.xib; sourceTree = "<group>"; };
+		0FC2DFFB16BCEE7900DC7117 /* queen-of-pain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "queen-of-pain.png"; sourceTree = "<group>"; };
+		0FC2DFFD16BCEE7E00DC7117 /* chaos-knight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chaos-knight.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,18 +102,10 @@
 		0FC2DFB816BC584D00DC7117 /* MatchStats */ = {
 			isa = PBXGroup;
 			children = (
+				0FC2DFF616BCE8AA00DC7117 /* Views and ViewControllers */,
+				0FC2DFF516BCE89E00DC7117 /* Container Objects */,
 				0FC2DFC116BC584D00DC7117 /* MSAppDelegate.h */,
 				0FC2DFC216BC584D00DC7117 /* MSAppDelegate.m */,
-				0FC2DFCA16BC584D00DC7117 /* MSFirstViewController.h */,
-				0FC2DFCB16BC584D00DC7117 /* MSFirstViewController.m */,
-				0FC2DFCD16BC584D00DC7117 /* first.png */,
-				0FC2DFCF16BC584D00DC7117 /* first@2x.png */,
-				0FC2DFD116BC584D00DC7117 /* MSSecondViewController.h */,
-				0FC2DFD216BC584D00DC7117 /* MSSecondViewController.m */,
-				0FC2DFD416BC584D00DC7117 /* second.png */,
-				0FC2DFD616BC584D00DC7117 /* second@2x.png */,
-				0FC2DFD816BC584D00DC7117 /* MSFirstViewController.xib */,
-				0FC2DFDB16BC584D00DC7117 /* MSSecondViewController.xib */,
 				0FC2DFB916BC584D00DC7117 /* Supporting Files */,
 			);
 			path = MatchStats;
@@ -116,6 +114,7 @@
 		0FC2DFB916BC584D00DC7117 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0FC2DFF416BCE88800DC7117 /* images */,
 				0FC2DFBA16BC584D00DC7117 /* MatchStats-Info.plist */,
 				0FC2DFBB16BC584D00DC7117 /* InfoPlist.strings */,
 				0FC2DFBE16BC584D00DC7117 /* main.m */,
@@ -125,6 +124,49 @@
 				0FC2DFC816BC584D00DC7117 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0FC2DFF316BCE87E00DC7117 /* XIB Files */ = {
+			isa = PBXGroup;
+			children = (
+				0FC2DFD816BC584D00DC7117 /* MSFirstViewController.xib */,
+				0FC2DFEB16BCE7CD00DC7117 /* MSDetailViewController.xib */,
+				0FC2DFF016BCE85B00DC7117 /* MSViewController.xib */,
+				0FC2DFF716BCEBC700DC7117 /* MSPlayerTableViewCell.xib */,
+			);
+			name = "XIB Files";
+			sourceTree = "<group>";
+		};
+		0FC2DFF416BCE88800DC7117 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				0FC2DFFD16BCEE7E00DC7117 /* chaos-knight.png */,
+				0FC2DFFB16BCEE7900DC7117 /* queen-of-pain.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		0FC2DFF516BCE89E00DC7117 /* Container Objects */ = {
+			isa = PBXGroup;
+			children = (
+				0FC2DFE316BC8A4F00DC7117 /* MSMatch.h */,
+				0FC2DFE616BC8AA000DC7117 /* MSPlayer.h */,
+				0FC2DFE716BC8AA000DC7117 /* MSPlayer.m */,
+				0FC2DFE416BC8A5000DC7117 /* MSMatch.m */,
+			);
+			name = "Container Objects";
+			sourceTree = "<group>";
+		};
+		0FC2DFF616BCE8AA00DC7117 /* Views and ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0FC2DFF316BCE87E00DC7117 /* XIB Files */,
+				0FC2DFE916BCE7CD00DC7117 /* MSDetailViewController.h */,
+				0FC2DFEA16BCE7CD00DC7117 /* MSDetailViewController.m */,
+				0FC2DFEE16BCE85B00DC7117 /* MSViewController.h */,
+				0FC2DFEF16BCE85B00DC7117 /* MSViewController.m */,
+			);
+			name = "Views and ViewControllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,12 +225,12 @@
 				0FC2DFC516BC584D00DC7117 /* Default.png in Resources */,
 				0FC2DFC716BC584D00DC7117 /* Default@2x.png in Resources */,
 				0FC2DFC916BC584D00DC7117 /* Default-568h@2x.png in Resources */,
-				0FC2DFCE16BC584D00DC7117 /* first.png in Resources */,
-				0FC2DFD016BC584D00DC7117 /* first@2x.png in Resources */,
-				0FC2DFD516BC584D00DC7117 /* second.png in Resources */,
-				0FC2DFD716BC584D00DC7117 /* second@2x.png in Resources */,
 				0FC2DFDA16BC584D00DC7117 /* MSFirstViewController.xib in Resources */,
-				0FC2DFDD16BC584D00DC7117 /* MSSecondViewController.xib in Resources */,
+				0FC2DFED16BCE7CD00DC7117 /* MSDetailViewController.xib in Resources */,
+				0FC2DFF216BCE85B00DC7117 /* MSViewController.xib in Resources */,
+				0FC2DFF816BCEBC700DC7117 /* MSPlayerTableViewCell.xib in Resources */,
+				0FC2DFFC16BCEE7900DC7117 /* queen-of-pain.png in Resources */,
+				0FC2DFFE16BCEE7E00DC7117 /* chaos-knight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,8 +243,10 @@
 			files = (
 				0FC2DFBF16BC584D00DC7117 /* main.m in Sources */,
 				0FC2DFC316BC584D00DC7117 /* MSAppDelegate.m in Sources */,
-				0FC2DFCC16BC584D00DC7117 /* MSFirstViewController.m in Sources */,
-				0FC2DFD316BC584D00DC7117 /* MSSecondViewController.m in Sources */,
+				0FC2DFE516BC8A5000DC7117 /* MSMatch.m in Sources */,
+				0FC2DFE816BC8AA000DC7117 /* MSPlayer.m in Sources */,
+				0FC2DFEC16BCE7CD00DC7117 /* MSDetailViewController.m in Sources */,
+				0FC2DFF116BCE85B00DC7117 /* MSViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,14 +267,6 @@
 				0FC2DFD916BC584D00DC7117 /* en */,
 			);
 			name = MSFirstViewController.xib;
-			sourceTree = "<group>";
-		};
-		0FC2DFDB16BC584D00DC7117 /* MSSecondViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0FC2DFDC16BC584D00DC7117 /* en */,
-			);
-			name = MSSecondViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

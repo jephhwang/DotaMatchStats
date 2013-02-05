@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MSAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
+@interface MSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) UITabBarController *tabBarController;
+@property (strong, nonatomic) UINavigationController *navController;
 
 @end

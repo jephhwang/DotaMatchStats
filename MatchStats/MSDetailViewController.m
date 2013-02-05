@@ -1,33 +1,32 @@
 //
-//  MSSecondViewController.m
+//  MSDetailViewController.m
 //  MatchStats
 //
 //  Created by Jeff Wang on 2/1/13.
 //  Copyright (c) 2013 Jeff Wang. All rights reserved.
 //
 
-#import "MSSecondViewController.h"
+#import "MSDetailViewController.h"
 
-@interface MSSecondViewController ()
+@interface MSDetailViewController ()
 
 @end
 
-@implementation MSSecondViewController
+@implementation MSDetailViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-    self.title = NSLocalizedString(@"Second", @"Second");
-    self.tabBarItem.image = [UIImage imageNamed:@"second"];
+        // Custom initialization
     }
     return self;
 }
-							
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
