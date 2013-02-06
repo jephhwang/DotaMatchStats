@@ -11,7 +11,7 @@
 @class MSMatch;
 @interface MSViewController : UITableViewController
 
-- (NSMutableArray*)createdataSrc;
+- (void)createdataSrc;
 - (NSArray*)getDisplayNames;
 
 @property(strong, nonatomic) MSMatch *match;
