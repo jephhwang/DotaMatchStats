@@ -7,6 +7,8 @@
 //
 
 #import "MSDetailViewController.h"
+#import "MSViewController.h"
+
 
 @interface MSDetailViewController ()
 
@@ -27,6 +29,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.playerNameLabel.text = [[self.parentView.dataSrc objectAtIndex:[self.playerNum integerValue]] objectForKey:@"PlayerName"];
+    self.KDAlabel.text = [[self.parentView.dataSrc objectAtIndex:[self.playerNum integerValue]] objectForKey:@"KDA"];
+    self.levelLabel.text = [NSString stringWithFormat:@"%@",[[self.parentView.dataSrc objectAtIndex:[self.playerNum integerValue]] objectForKey:@"level"]];
+    self.xpmLabel.text = [NSString stringWithFormat:@"%@",[[self.parentView.dataSrc objectAtIndex:[self.playerNum integerValue]] objectForKey:@"xpm"]];
+    self.gpmLabel.text = [NSString stringWithFormat:@"%@",[[self.parentView.dataSrc objectAtIndex:[self.playerNum integerValue]] objectForKey:@"gpm"]];
+    self.csLabel.text = [NSString stringWithFormat:@"%@",[[self.parentView.dataSrc objectAtIndex:[self.playerNum integerValue]] objectForKey:@"cs"]];
+    self.denyLabel.text = [NSString stringWithFormat:@"%@",[[self.parentView.dataSrc objectAtIndex:[self.playerNum integerValue]] objectForKey:@"denies"]];
 }
 
 - (void)didReceiveMemoryWarning

@@ -43,4 +43,29 @@
   return [self.playerInfo objectForKey:@"deaths"];
 }
 
+- (NSNumber *)endLevel
+{
+    return [self.playerInfo objectForKey:@"level"];
+}
+
+- (NSNumber *)xpm
+{
+    return [self.playerInfo objectForKey:@"xp_per_min"];
+}
+
+- (NSNumber *)gpm
+{
+    return [self.playerInfo objectForKey:@"gold_per_min"];
+}
+
+- (NSNumber *)cs
+{
+    return [self.playerInfo objectForKey:@"last_hits"];
+}
+
+- (NSNumber *)denies
+{
+    return [self.playerInfo objectForKey:@"denies"];
+}
+
 @end

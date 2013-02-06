@@ -117,6 +117,11 @@
         NSNumber *k = [[playerArray objectAtIndex:i] kills];
         NSNumber *d = [[playerArray objectAtIndex:i] deaths];
         NSNumber *a = [[playerArray objectAtIndex:i] assists];
+        NSNumber *level = [[playerArray objectAtIndex:i] endLevel];
+        NSNumber *xpm = [[playerArray objectAtIndex:i] xpm];
+        NSNumber *gpm = [[playerArray objectAtIndex:i] gpm];
+        NSNumber *cs = [[playerArray objectAtIndex:i] cs];
+        NSNumber *denies = [[playerArray objectAtIndex:i] denies];
         
         NSNumber *accountID = [displayNames objectAtIndex:i];
         NSString *kdaStr = [NSString stringWithFormat:@"%d/%d/%d", [k integerValue],
@@ -126,7 +131,12 @@
         NSMutableDictionary *p0dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                        accountID, @"PlayerName",
                                        heroID, @"HeroID",
-                                       kdaStr, @"KDA", nil];
+                                       kdaStr, @"KDA",
+                                       level, @"level",
+                                       xpm, @"xpm",
+                                       gpm, @"gpm",
+                                       cs, @"cs",
+                                       denies, @"denies",nil];
         
         [dataSrc addObject:p0dict];
     }
@@ -242,6 +252,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MSDetailViewController *detailController = [[MSDetailViewController alloc] initWithNibName:@"MSDetailViewController"
                                                                                         bundle:nil];
+    detailController.parentView = self;
+    detailController.playerNum = [NSNumber numberWithInt:[indexPath row]];
     [self.navigationController pushViewController:detailController animated:YES];
 }
 
