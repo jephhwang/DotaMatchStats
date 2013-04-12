@@ -7,7 +7,7 @@
 //
 
 #import "MSDetailViewController.h"
-#import "MSViewController.h"
+#import "MSMatchViewController.h"
 #import "MSMatch.h"
 
 @interface MSDetailViewController ()

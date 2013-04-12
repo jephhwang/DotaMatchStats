@@ -8,24 +8,61 @@
 
 #import "MSAppDelegate.h"
 
-#import "MSViewController.h"
+#import "MSMatchViewController.h"
+#import "MSMatchListViewController.h"
 
 @implementation MSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  MSViewController *viewController = [[MSViewController alloc] initWithNibName:@"MSViewController"
+    MSMatchListViewController *viewController = [[MSMatchListViewController alloc] initWithNibName:@"MSMatchViewController" bundle:nil];
+    /*
+  MSMatchViewController *viewController = [[MSMatchViewController alloc] initWithNibName:@"MSMatchViewController"
                                                                         bundle:nil];
+     */
   self.navController = [[UINavigationController alloc] initWithRootViewController:viewController];
   self.window.rootViewController = self.navController;
   [self.window makeKeyAndVisible];
     self.heroNames = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    @"antimage", [NSNumber numberWithInt:1],
                                       @"axe", [NSNumber numberWithInt:2],
+                                    @"bane", [NSNumber numberWithInt:3],
+                                    @"bloodseeker", [NSNumber numberWithInt:4],
+                                    @"crystal_maiden", [NSNumber numberWithInt:5],
+                                    @"drow_ranger", [NSNumber numberWithInt:6],
+                                    @"earthshaker", [NSNumber numberWithInt:7],
+                                    @"juggernaut", [NSNumber numberWithInt:8],
+                                    @"mirana", [NSNumber numberWithInt:9],
+                                    @"morphling", [NSNumber numberWithInt:10],
                                       @"nevermore", [NSNumber numberWithInt:11],
+                                    @"phantom_lancer", [NSNumber numberWithInt:12],
+                                    @"puck", [NSNumber numberWithInt:13],
+                                    @"pudge", [NSNumber numberWithInt:14],
+                                    @"razor", [NSNumber numberWithInt:15],
+                                    @"sand_king", [NSNumber numberWithInt:16],
+                                    @"storm_spirit", [NSNumber numberWithInt:17],
+                                    @"sven", [NSNumber numberWithInt:18],
+                                    @"tiny", [NSNumber numberWithInt:19],
+                                    @"vengefulspirit", [NSNumber numberWithInt:20],
                                       @"windrunner", [NSNumber numberWithInt:21],
+                                    @"zuus", [NSNumber numberWithInt:22],
+                                    @"kunkka", [NSNumber numberWithInt:23],
+                                    @"", [NSNumber numberWithInt:24],
                                       @"lina", [NSNumber numberWithInt:25],
+                                    @"lion", [NSNumber numberWithInt:26],
+                                    @"shadow_shaman", [NSNumber numberWithInt:27],
                                       @"slardar", [NSNumber numberWithInt:28],
+                                    @"tidehunter", [NSNumber numberWithInt:29],
+                                    @"witch_doctor", [NSNumber numberWithInt:30],
+                                    @"", [NSNumber numberWithInt:31],
+                                    @"riki", [NSNumber numberWithInt:32],
+                                    @"enigma", [NSNumber numberWithInt:33],
+                                    @"tinker", [NSNumber numberWithInt:34],
+                                    @"sniper", [NSNumber numberWithInt:35],
+                                    @"necrolyte", [NSNumber numberWithInt:36],
+                                    @"warlock", [NSNumber numberWithInt:37],
+                                    @"beastmaster", [NSNumber numberWithInt:38],
                                       @"queenofpain", [NSNumber numberWithInt:39],
                                       @"chaos_knight", [NSNumber numberWithInt:81],
                                       @"nyx_assassin", [NSNumber numberWithInt:88],

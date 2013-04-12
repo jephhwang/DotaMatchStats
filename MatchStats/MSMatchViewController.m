@@ -1,25 +1,22 @@
 //
-//  MSViewController.m
+//  MSMatchViewController.m
 //  MatchStats
 //
 //  Created by Jeff Wang on 2/1/13.
 //  Copyright (c) 2013 Jeff Wang. All rights reserved.
 //
 
-#import "MSViewController.h"
+#import "MSMatchViewController.h"
 #import "MSDetailViewController.h"
 #import "MSPlayer.h"
 #import "MSMatch.h"
 
-@interface MSViewController ()
+@interface MSMatchViewController ()
 -(NSString *)stringWithTokens:(NSArray *)tokens;
 -(void)apiTest;
 @end
 
-@implementation MSViewController
-
-const int testMatchID = 107459482;
-
+@implementation MSMatchViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,6 +26,7 @@ const int testMatchID = 107459482;
     }
     return self;
 }
+
 
 - (void)viewDidLoad
 {
@@ -40,7 +38,7 @@ const int testMatchID = 107459482;
     
     
     //UI Setup
-    self.navigationController.navigationBar.topItem.title = [NSString stringWithFormat:@"Match %u", testMatchID];
+    self.navigationController.navigationBar.topItem.title = [NSString stringWithFormat:@"Match %u", self.currentMatchID];
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
@@ -53,8 +51,7 @@ const int testMatchID = 107459482;
         
         // do background shit here.
         //Fetching Match Info
-        NSNumber *matchID = [NSNumber numberWithInt:testMatchID];
-        NSURL *fetchURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/V001/?match_id=%d&key=FEA2FFAE6A7DCDAA954FA9138E35B351", [matchID integerValue]]];
+        NSURL *fetchURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/V001/?match_id=%u&key=FEA2FFAE6A7DCDAA954FA9138E35B351", self.currentMatchID]];
         NSData *data = [[NSData alloc] initWithContentsOfURL:fetchURL];
         NSError *error;
         NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
@@ -113,7 +110,7 @@ const int testMatchID = 107459482;
     NSArray *playerArray = [NSArray arrayWithObjects:self.match.player0,self.match.player1,self.match.player2,self.match.player3,self.match.player4,self.match.player5,self.match.player6,self.match.player7,self.match.player8,self.match.player9, nil];
     */
     NSArray *playerArray = [self.match getPlayerArray];
-    NSLogDebug(@"%@", [displayNames description]);
+    //NSLogDebug(@"%@", [displayNames description]);
     for (int i = 0; i<10; i++) {
         
         NSNumber *k = [[playerArray objectAtIndex:i] kills];
@@ -198,7 +195,6 @@ const int testMatchID = 107459482;
         NSError *error;
         NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         if (error) NSLogDebug(@"%@", [error localizedDescription]);
-        NSLog([dataDictionary description]);
     }
     @catch (NSException *e) {
         NSLogDebug(@"something got fked");
