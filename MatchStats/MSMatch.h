@@ -20,6 +20,4 @@
 - (NSArray *) getPlayerArray;
 -(MSPlayer *)getPlayer:(int)playerNumber;
 
-//@property(strong, nonatomic) MSPlayer *player0,*player1,*player2,*player3,*player4,*player5,*player6,*player7,*player8,*player9;
-//@property(strong, nonatomic) NSDictionary *heroNames;
 @end
