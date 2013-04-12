@@ -18,7 +18,7 @@
 
 @implementation MSViewController
 
-#pragma helper functions
+const int testMatchID = 107459482;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -40,7 +40,7 @@
     
     
     //UI Setup
-    self.navigationController.navigationBar.topItem.title = @"Radiant";
+    self.navigationController.navigationBar.topItem.title = [NSString stringWithFormat:@"Match %u", testMatchID];
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
@@ -53,7 +53,7 @@
         
         // do background shit here.
         //Fetching Match Info
-        NSNumber *matchID = [NSNumber numberWithInt:107459482];
+        NSNumber *matchID = [NSNumber numberWithInt:testMatchID];
         NSURL *fetchURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/V001/?match_id=%d&key=FEA2FFAE6A7DCDAA954FA9138E35B351", [matchID integerValue]]];
         NSData *data = [[NSData alloc] initWithContentsOfURL:fetchURL];
         NSError *error;
@@ -109,8 +109,10 @@
     NSArray *displayNames = [previousOp result];
     //do whatever you were doing before w/displayNames here
     NSMutableArray *dataSrc = [NSMutableArray arrayWithCapacity:10];
+    /*
     NSArray *playerArray = [NSArray arrayWithObjects:self.match.player0,self.match.player1,self.match.player2,self.match.player3,self.match.player4,self.match.player5,self.match.player6,self.match.player7,self.match.player8,self.match.player9, nil];
-    
+    */
+    NSArray *playerArray = [self.match getPlayerArray];
     NSLogDebug(@"%@", [displayNames description]);
     for (int i = 0; i<10; i++) {
         
@@ -221,6 +223,17 @@
     return [self.dataSrc count];
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger row = [indexPath row];
+    if (row <= 4) {
+        cell.backgroundColor = [[UIColor alloc] initWithRed:124.0f/255.0f green:205.0f/255.0f blue:124.0f/255.0f alpha:1];
+    }
+    else{
+        cell.backgroundColor = [[UIColor alloc] initWithRed:139.0f/255.0f green:62.0f/255.0f blue:47.0f/255.0f alpha:1];
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -233,7 +246,7 @@
     NSString *str = [[self.dataSrc objectAtIndex:row] objectForKey:@"PlayerName"];
     NSString *subtext = [[self.dataSrc objectAtIndex:row] objectForKey:@"KDA"];
     NSNumber *heroID = [[self.dataSrc objectAtIndex:row] objectForKey:@"HeroID"];
-    NSString *imageName = [self.match getHeroNameWithID:[heroID integerValue]];
+    NSString *imageName = [MSMatch getHeroNameWithID:[heroID integerValue]];
     
     UIImage *playerimage= [UIImage imageNamed:[NSString stringWithFormat:@"%@_sb.png", imageName]];
     cell.imageView.image = playerimage;
@@ -242,7 +255,7 @@
     cell.textLabel.text = str;
    
     cell.detailTextLabel.text = [NSString stringWithFormat:@"KDA: %@",subtext];
-    
+   
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }

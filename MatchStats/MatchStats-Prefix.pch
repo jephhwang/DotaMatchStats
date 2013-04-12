@@ -19,4 +19,5 @@ strrchr("/" __FILE__, '/') + 1, __LINE__, __PRETTY_FUNCTION__, ## __VA_ARGS__)
 #ifdef __OBJC__
   #import <UIKit/UIKit.h>
   #import <Foundation/Foundation.h>
+  #import "MSAppDelegate.h" 
 #endif

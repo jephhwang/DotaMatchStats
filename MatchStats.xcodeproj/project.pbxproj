@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F8322EC16C60CA300ECFD45 /* logo transparant.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8322EB16C60CA300ECFD45 /* logo transparant.png */; };
+		0F8322F016C60FCD00ECFD45 /* logo transparant copy2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8322EF16C60FCD00ECFD45 /* logo transparant copy2.png */; };
+		0F8322F216C6106800ECFD45 /* logo transparant copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8322F116C6106800ECFD45 /* logo transparant copy.png */; };
+		0F8322F416C610C300ECFD45 /* logo transparant copy 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8322F316C610C300ECFD45 /* logo transparant copy 3.png */; };
 		0FC2DFB316BC584D00DC7117 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC2DFB216BC584D00DC7117 /* UIKit.framework */; };
 		0FC2DFB516BC584D00DC7117 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC2DFB416BC584D00DC7117 /* Foundation.framework */; };
 		0FC2DFB716BC584D00DC7117 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC2DFB616BC584D00DC7117 /* CoreGraphics.framework */; };
@@ -38,6 +42,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F8322EB16C60CA300ECFD45 /* logo transparant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo transparant.png"; sourceTree = "<group>"; };
+		0F8322EF16C60FCD00ECFD45 /* logo transparant copy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo transparant copy2.png"; sourceTree = "<group>"; };
+		0F8322F116C6106800ECFD45 /* logo transparant copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo transparant copy.png"; sourceTree = "<group>"; };
+		0F8322F316C610C300ECFD45 /* logo transparant copy 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo transparant copy 3.png"; sourceTree = "<group>"; };
 		0FC2DFAF16BC584D00DC7117 /* MatchStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC2DFB216BC584D00DC7117 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0FC2DFB416BC584D00DC7117 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -160,7 +168,11 @@
 			children = (
 				0FC2DFFB16BCEE7900DC7117 /* queen-of-pain.png */,
 				0FD3E91416C0FEB3003821D3 /* queenofpain_sb.png */,
+				0F8322F116C6106800ECFD45 /* logo transparant copy.png */,
 				0FD3E91A16C1011A003821D3 /* troll_warlord_sb.png */,
+				0F8322F316C610C300ECFD45 /* logo transparant copy 3.png */,
+				0F8322EB16C60CA300ECFD45 /* logo transparant.png */,
+				0F8322EF16C60FCD00ECFD45 /* logo transparant copy2.png */,
 				0FD3E91B16C1011A003821D3 /* windrunner_sb.png */,
 				0FD3E91C16C1011A003821D3 /* nevermore_sb.png */,
 				0FD3E91D16C1011A003821D3 /* nyx_assassin_sb.png */,
@@ -177,9 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				0FC2DFE316BC8A4F00DC7117 /* MSMatch.h */,
+				0FC2DFE416BC8A5000DC7117 /* MSMatch.m */,
 				0FC2DFE616BC8AA000DC7117 /* MSPlayer.h */,
 				0FC2DFE716BC8AA000DC7117 /* MSPlayer.m */,
-				0FC2DFE416BC8A5000DC7117 /* MSMatch.m */,
 			);
 			name = "Container Objects";
 			sourceTree = "<group>";
@@ -267,6 +279,10 @@
 				0FD3E92516C1011A003821D3 /* axe_sb.png in Resources */,
 				0FD3E92616C1011A003821D3 /* slardar_sb.png in Resources */,
 				0FD3E92716C1011A003821D3 /* keeper_of_the_light_sb.png in Resources */,
+				0F8322EC16C60CA300ECFD45 /* logo transparant.png in Resources */,
+				0F8322F016C60FCD00ECFD45 /* logo transparant copy2.png in Resources */,
+				0F8322F216C6106800ECFD45 /* logo transparant copy.png in Resources */,
+				0F8322F416C610C300ECFD45 /* logo transparant copy 3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
